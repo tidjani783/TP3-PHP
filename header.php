@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>Jumbotron Template · Bootstrap v4.6</title>
+    <title>Ma super bibliotheque 78!!</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/jumbotron/">
     <script src="https://kit.fontawesome.com/3f9044169f.js" crossorigin="anonymous"></script>
@@ -68,7 +68,7 @@
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa-regular fa-flag"></i>  gestion des nationalite</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="listeNationalites.php">Liste Des Nationalite</a>
-          <a class="dropdown-item" href="#">Ajouter Un Nationalite</a>
+          <a class="dropdown-item" href="fromAjoutNationalité.php">Ajouter Un Nationalite</a>
         </div>
       </li>
     </ul>
