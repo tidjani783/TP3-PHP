@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -68,7 +69,7 @@
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa-regular fa-flag"></i>  gestion des nationalite</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="listeNationalites.php">Liste Des Nationalite</a>
-          <a class="dropdown-item" href="fromAjoutNationalité.php">Ajouter Un Nationalite</a>
+          <a class="dropdown-item" href="formNationalite.php">Ajouter Un Nationalite</a>
         </div>
       </li>
     </ul>

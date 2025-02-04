@@ -5,6 +5,23 @@ $req=$monPdo->prepare("select * from nationalite");
 $req->setFetchMode(PDO::FETCH_OBJ);
 $req->execute();
 $lesNationalites=$req->fetchALL();
+
+if(!empty($_SESSION['message'])){
+    $mesMessages=$_SESSION['message'];
+    foreach($mesMessages as $key=>$message){
+      echo '<div class="container pt-5"
+      <div class="alert alert-' .$key.' alert-dismissible fade show" role="alert">'.$message.'
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div>';
+
+
+    }
+    $_SESSION['message']=[];
+}
+
 ?>
 
 
@@ -34,33 +51,16 @@ $lesNationalites=$req->fetchALL();
       echo "<td class='col-md-8'>$nationalite->libelle</td>";
       echo "<td class='col-md-2'>
            <a href='formNationalite.php?action=Modifier&num=$nationalite->num' class='btn btn-primary'><i class='fas fa-pen'></i></a>
-           <a href='#modalSuppression' data-toggle='modal' class='btn btn-danger'><i class='far fa-trash-alt'></i></a>
+           <a href='#modalSuppression' data-toggle='modal' data-message='Voulez vous supprimer cette nationalitée ?' data-suppression='suppNationalite.php?num=$nationalite->num' class='btn btn-danger'><i class='far fa-trash-alt'></i></a>
       </td>";
       echo "</tr>";
     }
-//suppNationalite.php?num=$nationalite->num'
 
     ?>
   </tbody>
   </table>
 
-  <div id="modalSuppression" class="modal">
-    <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-
-        <h4 class="modal-title">Confirmation de suppression</h4>
-      </div>
-      <div class="modal-body">
-        <p>Voulez vous supprimer cette nationalitée ?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Ne pas supprimer</button>
-        <a href="suppNationalite.php?num=" class="btn btn-primary">Supprimer</a>
-      </div>
-    </div>
-  </div>
-</div>
+  
   <?php include "footer.php";
   
   ?>
