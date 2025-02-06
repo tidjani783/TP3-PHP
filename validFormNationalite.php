@@ -4,13 +4,15 @@ include "connexionPdo.php";
 $action=$_GET['action'];
 $num=$_POST['num']; // je récupère le libellé du formulaire
 $libelle=$_POST['libelle']; // je récupère le libellé du formulaire
+$continent=$_POST['continent']; // je récupère le continent du formulaire
 
 if($action == "Modifier"){
-    $req=$monPdo->prepare("update nationalite set libelle = :libelle where num = :num");
-    $req->bindParam(':libelle', $libelle);
+    $req=$monPdo->prepare("update nationalite set libelle = :libelle, numContinent= :continent where num = :num");
     $req->bindParam(':num', $num);
+    $req->bindParam(':libelle', $libelle);
 }else{
-    $req=$monPdo->prepare("insert into nationalite(libelle) values(:libelle)");
+    $req=$monPdo->prepare("insert into nationalite(libelle, numContinent) values(:libelle, :continent)");
+    $req->bindParam(':continent', $continent);
     $req->bindParam(':libelle', $libelle); 
 }
 $nb=$req->execute();
